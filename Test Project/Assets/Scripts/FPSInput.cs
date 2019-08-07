@@ -7,17 +7,14 @@ using UnityEngine;
 public class FPSInput : MonoBehaviour
 {
     public float speed = 6.0f;
-    public float gravity = 9.8f;
-    public float jumpValue = 5;
+    public float gravity = 20f;
+    public float jumpValue = 10;
 
     private CharacterController _characterController;
-    private Rigidbody _rigidbody;
 
-    private Vector3 movement = Vector3.zero;
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
-        _rigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -27,6 +24,7 @@ public class FPSInput : MonoBehaviour
         Vector3 movement = new Vector3(deltaX, 0, deltaZ);
         movement = Vector3.ClampMagnitude(movement, speed);
         movement = transform.TransformDirection(movement);
+        
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -39,15 +37,14 @@ public class FPSInput : MonoBehaviour
             Debug.Log("Контрол отжат" + speed);
         }
 
-        if (Input.GetKey(KeyCode.Space)  && _characterController.isGrounded)
+        if (Input.GetButton("Jump")  && _characterController.isGrounded)
         {
             movement.y = jumpValue;
             Debug.Log("Прыжок" + jumpValue);
         }
 
-        movement *= Time.deltaTime;
-        movement.y -= gravity * Time.deltaTime;
-        _characterController.Move(movement);
-       
+        movement.y -= gravity;
+        _characterController.Move(movement * Time.deltaTime);
+
     }
 }
