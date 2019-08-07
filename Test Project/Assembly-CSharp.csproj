@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Scripts\EnemyLight.cs" />
+    <Compile Include="Assets\Scripts\FPSInput.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\MoveEnemy.cs" />
     <Compile Include="Assets\Scripts\MoveObject.cs" />
