@@ -1323,6 +1323,7 @@ GameObject:
   - component: {fileID: 2053305758}
   - component: {fileID: 2053305762}
   - component: {fileID: 2053305763}
+  - component: {fileID: 2053305764}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1442,8 +1443,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  gravity: -9.8
-  jumpValue: 5
+  gravity: 9.8
+  jumpValue: 10
 --- !u!114 &2053305763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,6 +1462,20 @@ MonoBehaviour:
   sensivityVert: 3
   minimumVert: -45
   maximumVert: 45
+--- !u!136 &2053305764
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053305756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2056873431
 GameObject:
   m_ObjectHideFlags: 0
