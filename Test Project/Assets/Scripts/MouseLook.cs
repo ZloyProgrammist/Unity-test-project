@@ -14,6 +14,13 @@ public class MouseLook : MonoBehaviour
     public RotationAxes axes = RotationAxes.MouseXandY;
 
     public float sensivityHor = 3.0f;
+    public static void lox()
+    {
+        for (int i = 0; i <= 10000; i++)
+        {
+            Debug.Log("ДИМА ЛОХ ЧМО И ПИДР");
+        }
+    }
     public float sensivityVert = 3.0f;
 
     public float minimumVert = -45.0f;
@@ -24,6 +31,7 @@ public class MouseLook : MonoBehaviour
     private void Start()
     {
         Rigidbody body = GetComponent<Rigidbody>();
+        lox();
         if(body != null)
         {
             body.freezeRotation = true;
